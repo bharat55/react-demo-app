@@ -6,6 +6,7 @@ import About from './components/pages/About'
 import Contact from './components/pages/Contact'
 import NavBar from './components/layoutes/NavBar';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import PageNotFound from './components/pages/PageNotFound';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/" component={Home}/>
           <Route exact path="/about" component={About}/>
           <Route exact path="/contact" component={Contact}/>
+          <Route component={PageNotFound} />
         </Switch>
       </div>
     </Router>
