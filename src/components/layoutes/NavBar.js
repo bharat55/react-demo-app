@@ -22,6 +22,7 @@ function NavBar() {
           </li> 
         </ul>
       </div>
+      <Link className="btn btn-outline-light" exact to="/user/new">New</Link>
     </nav>
   </div>
   )
