@@ -19,34 +19,36 @@ function New() {
     history.push("/");
   }
   return (
-    <div className="container py-2">
-      <h3 className="centered">Add a user</h3>
-      <form onSubmit={e => saveUser(e)}>
-        <div className="form-group">
-          <label for="exampleInputEmail1">Name</label>
-          <input type="text"
-           className="form-control"
-           name="name"
-           value={user.name}
-           onChange={(e) => handleInputChange(e)}
-           />
-        </div>
-        <div className="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" className="form-control"
-           name="email"
-           value={user.email}
-           onChange={(e) => handleInputChange(e)}/>
-        </div>
-        <div className="form-group">
-          <label for="PhoneNumber">Phone</label>
-          <input type="string" className="form-control"
-           name="phone"
-           value={user.phone}
-           onChange={(e) => handleInputChange(e)}/>
-        </div>
-        <button type="submit" className="btn btn-primary">Save User</button>
-      </form>
+    <div className="container">
+      <div className="container w-75 shadow p-5">
+        <h3 className="text-center mb-4">Add a user</h3>
+        <form onSubmit={e => saveUser(e)}>
+          <div className="form-group">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="text"
+            className="form-control"
+            name="name"
+            value={user.name}
+            onChange={(e) => handleInputChange(e)}
+            />
+          </div>
+          <div className="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" className="form-control"
+            name="email"
+            value={user.email}
+            onChange={(e) => handleInputChange(e)}/>
+          </div>
+          <div className="form-group">
+            <label for="PhoneNumber">Phone</label>
+            <input type="string" className="form-control"
+            name="phone"
+            value={user.phone}
+            onChange={(e) => handleInputChange(e)}/>
+          </div>
+          <button type="submit" className="btn btn-primary">Save User</button>
+        </form>
+      </div>
     </div>
   )
 }
