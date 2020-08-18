@@ -15,7 +15,7 @@ function New() {
   }
   const saveUser = async e => {
     e.preventDefault(); 
-    await axios.post("http://localhost:3004/users", user);
+    await axios.post("http://localhost:4004/users", user);
     history.push("/");
   }
   return (
@@ -42,8 +42,15 @@ function New() {
           <div className="form-group">
             <label for="PhoneNumber">Phone</label>
             <input type="string" className="form-control"
-            name="phone"
-            value={user.phone}
+            name="address"
+            value={user.address}
+            onChange={(e) => handleInputChange(e)}/>
+          </div>
+          <div className="form-group">
+            <label for="PhoneNumber">Phone</label>
+            <input type="string" className="form-control"
+            name="password"
+            value={user.password}
             onChange={(e) => handleInputChange(e)}/>
           </div>
           <button type="submit" className="btn btn-primary">Save User</button>

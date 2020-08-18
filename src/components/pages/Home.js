@@ -10,12 +10,13 @@ const Home  = () => {
   }, [])
 
   const loadUsers = async () => {
-    const result = await axios.get("http://localhost:3004/users");
+    const result = await axios.get("http://localhost:4004/users");
+    console.log(result)
     setUsers(result.data)
   }
 
   const deleteUser = async (id) => {
-    await axios.delete(`http://localhost:3004/users/${id}`);
+    await axios.delete(`http://localhost:4004/users/${id}`);
     loadUsers();
   }
   return (
@@ -27,7 +28,7 @@ const Home  = () => {
             <th scope="col">id</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
-            <th scope="col">Phone</th>
+            <th scope="col">address</th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -38,7 +39,7 @@ const Home  = () => {
                 <th scope="row">{user.id}</th>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
-                <td>{user.phone}</td>
+                <td>{user.address}</td>
                 <td>
                   <Link className="btn btn-outline-primary mr-2" to={`users/${user.id}`}>Show</Link>
                   <Link className="btn btn-outline-warning mr-2" to={`users/${user.id}/edit`}>Edit</Link>
